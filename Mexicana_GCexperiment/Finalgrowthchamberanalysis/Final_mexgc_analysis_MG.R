@@ -1,3 +1,6 @@
+install.packages("rjags")
+install.packages("devtools")
+
 library(rjags)
 library(stringr)
 library(mcmcplots)

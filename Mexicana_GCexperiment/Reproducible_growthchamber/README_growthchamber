@@ -1,0 +1,8 @@
+README_Growthchamber
+
+Many of the intermediary files are still present here, in order to help me keep track of materials during the review process.  However, the outputs from the final runs should be viewable in the
+
+
+fig3_growthstuff.R is the R script that will generate the 2 prior distributions of beta and gamma using our final parameters.  The documents titled FINALXXX.csv are the model outputs, so you can see the chains from the final outputs.
+
+Final_mexgc_analysis_cleaned.R is the R script with the code to run through the model.  The necessary files are in this folder.  The phenotypes can be found in grote_Indexmoms_groundedLL_d16NA.csv.  The script is designed to read in the input correctly, and then run the model expressed in DAG_twomediator_Final.txt.  You will need to have a lot of specific dependencies for rjags installed to make this work.

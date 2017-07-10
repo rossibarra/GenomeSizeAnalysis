@@ -225,6 +225,49 @@ fin.tr1
 fin.centc <- emma.REML.t_beta ( centcgb , alt , X0 =  cbind ( rep ( 1 , 37 ) , c ( gsgb ) ) , K = A )
 fin.centc
 
+#analysis of selection on all of the TE subfamilies.  Testing to see if more of them show selection than we would expect by chance.
+perte <- phenoorder[,4:1190]
+colnames(perte)
+
+#run it with named var
+try1 <- t ( as.matrix ( perte$DHH_Hip1_1 , ncol = 1 ) )
+tmp <- emma.REML.t ( try1 , alt , X0 =  cbind ( rep ( 1 , 77 ) , c ( gsgb ) ) , K = A )
+tmp
+#now with column number var
+tmp <- emma.REML.t ( perte[,1] , alt , X0 =  cbind ( rep ( 1 , 77 ) , c ( gsgb ) ) , K = A )
+tmp
+#they return the same
+as.numeric(tmp$ps)
+
+#NOW FOR DA WHOLE CABOODLE.
+pval <- c()
+for(i in 1:1187){
+  tmp <- emma.REML.t ( perte[,i] , alt , X0 =  cbind ( rep ( 1 , 77 ) , c ( gsgb ) ) , K = A )
+  pval <- c(pval , as.numeric(tmp$ps))
+}
+#So on the first run of this, it gives me an error where I have my all 0 values.  have to remove those 5 TEs.  I do so by seeing where the pval stops, and thats the next one that i need to NULL out.
+
+perte <- phenoorder[,4:1190]
+#we want to go to the original data frame and start nulling out those column IDs, not nulling out one at a time
+
+perte2 <- perte[,-which(colSums(perte)==0)]
+
+#So all of those numbers are a bit off from the original data matrix because im nulling out one at a time.  Below are the indexes in the full data frame maybe?
+
+#also have to 0 out the pval before reruning
+pval <- c()
+for(i in 1:ncol(perte2)){
+  tmp <- emma.REML.t ( perte2[,i] , alt , X0 =  cbind ( rep ( 1 , 77 ) , c ( gsgb ) ) , K = A )
+  pval <- c(pval , as.numeric(tmp$ps))
+}
+
+length(which(pval< 0.05))
+
+binom.test(46, 1156, p = 0.05)
+
+0.05*ncol(perte2)
+
+
 
 #rmarkdown::render("Maize_selectiontests.R", "pdf_document")
 

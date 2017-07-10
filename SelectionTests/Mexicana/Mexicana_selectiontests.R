@@ -13,6 +13,18 @@ library(OpenMx)
 
 source("../jri_emma_returnbeta.txt")
 
+#quick check of knob abundance in the low elevation mexicana samples we exclude
+
+lowmex <- read.csv("Master_mexnucleo_pruned.csv")
+
+plot(lowmex$Altitude,lowmex$X180knobbp)
+lows <- subset(lowmex, lowmex$Altitude<2000)
+highs <- subset(lowmex, lowmex$Altitude>2000)
+t.test(lows$X180knobbp,highs$X180knobbp) #nope
+t.test(lows$TR1bp,highs$TR1bp) #nope
+t.test(lows$TotalTebp,highs$TotalTebp) #yep
+plot(lowmex$Altitude,lowmex$TR1bp)
+
 #data<-read.table("~/Desktop/PaulCS/PaulCellSize_ZeaGBSv27raw_Poly_minSiteCov.3_minTaxaCov.1.RndImp.Endelman.kinship.txt",skip=3,row.names = 1)
 
 #mexfull <-data[78:170,78:170]
