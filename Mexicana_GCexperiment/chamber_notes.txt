@@ -1,0 +1,7 @@
+ As estimates for leaf elongation rate in maize are highly variable, we investigated results from three studies on maito identify the range of possible LER prior estimates \cite{ben1995temperature,van1985inhibitory,bos2000morphological}.
+ Bos et al \jri{please format} reported a 4.0cm/day LER for the 3rd leaf in similar temperature conditions, but grew plants in sandy soil with fertilizer application every other leaf emergence, or roughly every 2 weeks.
+ As our experiment used soil with fertilizer application every other day, we therefore consider this the lower bound of possible LER priors.
+ Ben et al \cite{ben1995temperature} used soil with regular water and fertilizer application similar to our experiment, though they measure a different leaf, and LER is known to vary through plant development.
+ In estimating LER, Ben et al vary meristem temperature and report values of elongation rates of the 6th leaf from 4.32 (at 17$^{\circ}$C), 7.2 (at 21$^{\circ}$C), and 9.6 cm/day (at 26$^{\circ}$C).
+ Van Volkenburgh and Boyer report a 4.6 cm/day leaf elongation rate one day after watering under a 30/20$^{\circ}$C day/night temperature regime \cite{van1985inhibitory}.
+ From this range of values, we believe that the LER prior for our experiment will be approximately 4.6cm/day, with a lower bound at 4.0cm/day.
