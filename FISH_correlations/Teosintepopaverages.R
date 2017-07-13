@@ -31,6 +31,9 @@ parv<-subset(crap,crap$species=="parviglumis")
 median(mex$genomesize,na.rm=TRUE)
 median(parv$genomesize,na.rm=TRUE)
 
+t.test(parv$genomesize,mex$genomesize, alternative = "greater")
+?t.test
+
 ggplot(crap, aes(altitude, genomesize, shape=factor(species))) + ylab("1C Genome Size") + geom_point(size=3)
 
 filter(crap,abs(altitude-1500)>250) %>%
