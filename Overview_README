@@ -1,5 +1,8 @@
 This readme will cover all of the folders in this repository.  Each folder should have its own readme for further direction, meaning that they are all self contained. Folders will contain intermediary files to document processing steps.  Most paths for reading in files in the R scripts will have to be changed, as your directory structure will be different than mine.
 
+RAW sequence data is available on figshare:
+	https://figshare.com/articles/GenomeSize_lowcoverage_Maizedata/5117827
+Names of fastq files correspond to the names of individuals in the data sets.
 Cell_num
 	Jinliang's analysis of shoot apical meristem growth in maize inbreds
 
